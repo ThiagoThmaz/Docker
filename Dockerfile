@@ -8,8 +8,7 @@ RUN cp -r static-web-page-terrarium/* /var/www/html
 RUN service apache2 restart
 RUN apt-get install curl -y
 
-expose 8080
+expose 80
 
-## docker build -t terrario .
-## docker run -t terrario /bin/bash
-## docker run -it -p 8080:80 terrario:2.0 /bin/bash
+CMD ["apachectl", "-D", "FOREGROUND"]
+
